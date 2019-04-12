@@ -1,0 +1,15 @@
+numpy
+scipy
+torch>=0.4.1
+nose
+pysptk>=0.1.9
+librosa
+matplotlib
+tqdm
+nnmnkwii>=0.0.11
+docopt
+tqdm
+tensorboardX<=1.2.0
+keras
+scikit-learn
+lws

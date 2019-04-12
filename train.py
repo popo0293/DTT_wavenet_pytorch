@@ -728,14 +728,15 @@ def train_loop(device, model, data_loaders, optimizer, writer, checkpoint_dir=No
                                              optimizer, writer, criterion, x, y, c, g, input_lengths,
                                              checkpoint_dir, eval_dir, do_eval, ema)
 
+                if global_step % 500 == 400:
+                    save_checkpoint(device, model, optimizer, global_step, checkpoint_dir, global_epoch)
+
                 # update global state
                 if train:
                     global_step += 1
                 else:
                     global_test_step += 1
 
-            if global_step % 600 == 599:
-                save_checkpoint(device, model, optimizer, global_step, checkpoint_dir, global_epoch)
 
             # log per epoch
             averaged_loss = running_loss / len(data_loader)
