@@ -734,6 +734,10 @@ def train_loop(device, model, data_loaders, optimizer, writer, checkpoint_dir=No
                 else:
                     global_test_step += 1
 
+            if global_step % 600 == 599:
+		        save_checkpoint(
+		            device, model, optimizer, global_step, checkpoint_dir, global_epoch)
+
             # log per epoch
             averaged_loss = running_loss / len(data_loader)
             writer.add_scalar("{} loss (per epoch)".format(phase),
