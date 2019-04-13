@@ -1,9 +1,8 @@
-numpy
+numpy==1.13.0
 scipy
 torch>=0.4.1
 nose
 pysptk>=0.1.9
-librosa
 matplotlib
 tqdm
 nnmnkwii>=0.0.11
