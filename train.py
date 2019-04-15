@@ -728,7 +728,7 @@ def train_loop(device, model, data_loaders, optimizer, writer, checkpoint_dir=No
                                              optimizer, writer, criterion, x, y, c, g, input_lengths,
                                              checkpoint_dir, eval_dir, do_eval, ema)
 
-                if global_step % 500 == 400:
+                if global_step % 300 == 0:
                     save_checkpoint(device, model, optimizer, global_step, checkpoint_dir, global_epoch)
 
                 # update global state
